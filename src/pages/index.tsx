@@ -4,11 +4,9 @@ import {
   VStack,
   HStack,
   Spacer,
-  Box,
   Text,
-  Grid,
-  Divider,
-  useToast
+  useToast,
+  Container
 } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
@@ -22,6 +20,8 @@ import Status from '@/types/Status'
 
 //@ts-ignore
 import { Card, Deck, createCards, statEn } from 'lt-spaced-repetition-js'
+import { RepeatIcon } from '@chakra-ui/icons'
+import Flashcard from '@/components/Flashcard'
 
 const Home: NextPage = () => {
   const toast = useToast()
@@ -116,146 +116,58 @@ const Home: NextPage = () => {
     }
   }, [card])
 
+  const handleRight = () => {
+    setVisible(false)
+    //@ts-ignore
+    card.update(1)
+    setCard(() => {
+      const next = deck.pick()
+      return next
+    })
+  }
+
+  const handleWrong = () => {
+    setVisible(false)
+    //@ts-ignore
+    card.update(0)
+    setCard(() => {
+      const next = deck.pick()
+      // localStorage.setItem("progress", JSON.stringify(deck.dump().cards));
+      return next
+    })
+  }
+
+  const handleVisible = () => {
+    setVisible(true)
+  }
+
   return (
-    <Center minH="100vh">
-      <VStack p={8} spacing={8} w={data.length === 0 ? 'inherit' : '100%'}>
-        <Head />
-        <HStack justifyContent="center" alignItems="center" w="100%">
-          <Heading>Custom Spaced Repetition</Heading>
-          <Spacer />
-          {data.length !== 0 && <UploadButton setData={setData} />}
-          <ColorToggle />
-        </HStack>
-        {data.length === 0 && <UploadButton setData={setData} />}
-        {deck && data.length > 0 && (
-          <div
-            id="main"
-            style={{
-              color: 'black',
-              minHeight: '100vh',
-              background: 'white',
-              textAlign: 'center'
-            }}>
-            <p
-              style={{
-                marginBottom: '1rem',
-                fontSize: '1.25rem',
-                fontWeight: 500,
-                color:
-                  card.status === 'mastered'
-                    ? 'green'
-                    : card.status === 'reviewing'
-                    ? 'yellow'
-                    : card.status === 'wrong'
-                    ? 'red'
-                    : 'black'
-              }}>
-              {card.status}
-            </p>
-            <h1 style={{ marginBottom: '2rem', fontSize: '3rem' }}>
-              {card.front}
-            </h1>
-            {visible && (
-              <p style={{ marginBottom: '2rem', fontSize: '1.5rem' }}>
-                {card.back}
-              </p>
-            )}
-            {!visible && (
-              <button
-                style={{
-                  width: '100%',
-                  background: 'white',
-                  color: 'black',
-                  fontWeight: 600,
-                  textAlign: 'center',
-                  padding: '1rem',
-                  borderRadius: '8px',
-                  cursor: 'pointer'
-                }}
-                onClick={() => setVisible(true)}>
-                Show meaning
-              </button>
-            )}
-            {visible && (
-              <div>
-                <button
-                  style={{
-                    width: '100%',
-                    background: 'green',
-                    color: 'white',
-                    fontWeight: 600,
-                    textAlign: 'center',
-                    padding: '1rem',
-                    borderRadius: '8px',
-                    cursor: 'pointer'
-                  }}
-                  onClick={() => {
-                    setVisible(false)
-                    //@ts-ignore
-                    card.update(1)
-                    setCard(() => {
-                      const next = deck.pick()
-                      // localStorage.setItem("progress", JSON.stringify(deck.dump().cards));
-                      return next
-                    })
-                  }}>
-                  I knew the meaning
-                </button>
-                <button
-                  style={{
-                    width: '100%',
-                    background: 'red',
-                    color: 'white',
-                    fontWeight: 600,
-                    textAlign: 'center',
-                    padding: '1rem',
-                    borderRadius: '8px',
-                    cursor: 'pointer'
-                  }}
-                  onClick={() => {
-                    setVisible(false)
-                    //@ts-ignore
-                    card.update(0)
-                    setCard(() => {
-                      const next = deck.pick()
-                      // localStorage.setItem("progress", JSON.stringify(deck.dump().cards));
-                      return next
-                    })
-                  }}>
-                  I didn&apos;t know the meaning
-                </button>
-              </div>
-            )}
-            {!visible && (
-              <button
-                style={{
-                  width: '100%',
-                  background: 'white',
-                  marginTop: '1rem',
-                  color: 'black',
-                  fontWeight: 600,
-                  textAlign: 'center',
-                  padding: '1rem',
-                  borderRadius: '8px',
-                  cursor: 'pointer'
-                }}
-                onClick={() => {
-                  const data =
-                    'data:text/json;charset=utf-8,' +
-                    encodeURIComponent(JSON.stringify(deck.dump().cards))
-                  const a = document.createElement('a')
-                  a.setAttribute('href', data)
-                  a.setAttribute('download', 'progress.json')
-                  a.click()
-                }}>
-                Download progress
-              </button>
-            )}
-            {/* <Progress progress={progress} /> */}
-          </div>
-        )}
-      </VStack>
-    </Center>
+    <VStack p={8} spacing={8} w={data.length === 0 ? 'inherit' : '100%'}>
+      <Head />
+      <HStack justifyContent="center" alignItems="center" w="100%">
+        <Heading size={data.length === 0 ? 'xl' : 'lg'}>
+          Custom Spaced Repetition
+        </Heading>
+        <Spacer />
+        {data.length !== 0 && <UploadButton setData={setData} />}
+        <ColorToggle />
+      </HStack>
+      {data.length === 0 && <UploadButton setData={setData} />}
+      {deck && data.length > 0 && (
+        <Container maxW="2xl">
+          <Text textAlign="end" mb={4}>
+            <RepeatIcon /> Cards you don&apos;t know will reappear later
+          </Text>
+          <Flashcard
+            card={card}
+            handleRight={handleRight}
+            handleWrong={handleWrong}
+            visible={visible}
+            handleVisible={handleVisible}
+          />
+        </Container>
+      )}
+    </VStack>
   )
 }
 

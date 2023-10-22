@@ -2,17 +2,17 @@ import Deck from '@/types/Deck'
 import formatContent from '@/utils/formatContent'
 import { AttachmentIcon } from '@chakra-ui/icons'
 import { Box, Button, useToast } from '@chakra-ui/react'
-import { Dispatch, FormEvent, SetStateAction, useRef } from 'react'
+import { useRef } from 'react'
 
 const UploadButton = ({
   setData
 }: {
-  setData: Dispatch<SetStateAction<Deck[]>>
+  setData: React.Dispatch<React.SetStateAction<Deck[]>>
 }) => {
   let fileRef = useRef<HTMLInputElement>()
   const toast = useToast()
 
-  const readFile = (event: FormEvent<HTMLInputElement>) => {
+  const readFile = (event: React.FormEvent<HTMLInputElement>) => {
     const fileReader = new FileReader()
     //@ts-ignore
     const { files } = event.target
