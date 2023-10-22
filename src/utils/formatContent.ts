@@ -18,8 +18,8 @@ const formatContent = (content: string, type: 'csv' | 'json') => {
       if (indexOfFront === -1 || indexofBack === -1) throw 'Invalid formatting'
       else {
         for (var i = 1; i < csvData.length; i++) {
-          const front = csvData[i][indexOfFront].trim()
-          const back = csvData[i][indexofBack].trim()
+          const front = (csvData[i][indexOfFront] || '').trim()
+          const back = (csvData[i][indexofBack] || '').trim()
 
           if (front.length > 0 && back.length > 0)
             formattedContent.push({ front, back })
@@ -29,8 +29,8 @@ const formatContent = (content: string, type: 'csv' | 'json') => {
     case 'json':
       const jsonData = JSON.parse(content)
       for (var i = 1; i < jsonData.length; i++) {
-        const front = jsonData.front.trim()
-        const back = jsonData.back.trim()
+        const front = (jsonData[i].front || '').trim()
+        const back = (jsonData[i].back || '').trim()
 
         if (front && front.length > 0 && back && back.length > 0)
           formattedContent.push({ front, back })

@@ -5,9 +5,9 @@ import { Box, Button, useToast } from '@chakra-ui/react'
 import { Dispatch, FormEvent, SetStateAction, useRef } from 'react'
 
 const UploadButton = ({
-  setDeck
+  setData
 }: {
-  setDeck: Dispatch<SetStateAction<Deck[]>>
+  setData: Dispatch<SetStateAction<Deck[]>>
 }) => {
   let fileRef = useRef<HTMLInputElement>()
   const toast = useToast()
@@ -21,14 +21,13 @@ const UploadButton = ({
     fileReader.onload = (e) => {
       try {
         const content = e.target!.result?.toString().replace(/\r\n/g, '\n')
-        if (content)
-          setDeck(
-            formatContent(
-              content,
-              files[0].name.split('.').slice(-1).toLowerCase()
-            )
-          )
+        if (content) {
+          const name = files[0].name.split('.')
+          const ext = name[name.length - 1].toLowerCase()
+          setData(formatContent(content, ext))
+        }
       } catch (e) {
+        setData([])
         if (e instanceof Error)
           toast({
             title: e.message || 'Invalid formatting',
