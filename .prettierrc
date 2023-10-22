@@ -1,0 +1,8 @@
+{
+  "bracketSameLine": true,
+  "endOfLine": "lf",
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "semi": false,
+  "singleQuote": true
+}
