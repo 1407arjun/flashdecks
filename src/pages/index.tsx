@@ -7,7 +7,8 @@ import {
   useToast,
   Container,
   Alert,
-  Center
+  Center,
+  Stack
 } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
@@ -150,15 +151,23 @@ const Home: NextPage = () => {
     return (
       <VStack p={4} spacing={8} w="100%">
         <Head />
-        <HStack justifyContent="center" alignItems="center" w="100%">
-          <Heading size="md">Custom Spaced Repetition</Heading>
+        <Stack
+          direction={{ base: 'column', md: 'row' }}
+          justifyContent="center"
+          alignItems="center"
+          w="100%">
+          <Heading textAlign={{ base: 'center', md: 'left' }} size="md">
+            Custom Spaced Repetition
+          </Heading>
           <Spacer />
-          <UploadButton setData={setData} />
-          <ColorToggle />
-        </HStack>
+          <HStack>
+            <UploadButton setData={setData} />
+            <ColorToggle />
+          </HStack>
+        </Stack>
         {deck && (
           <Container maxW="2xl">
-            <Text textAlign="end" mb={4}>
+            <Text textAlign={{ base: 'center', sm: 'right' }} mb={4}>
               <RepeatIcon /> Cards you don&apos;t know will reappear later
             </Text>
             {progress.mastered === progress.total && (
@@ -191,12 +200,16 @@ const Home: NextPage = () => {
     <Center minH="100vh">
       <VStack p={4} spacing={8} w="inherit">
         <Head />
-        <HStack justifyContent="center" alignItems="center" w="100%">
-          <Heading size="xl">Custom Spaced Repetition</Heading>
+        <VStack justifyContent="center" alignItems="center" w="100%">
+          <Heading textAlign="center" size="xl">
+            Custom Spaced Repetition
+          </Heading>
           <Spacer />
-          <ColorToggle />
-        </HStack>
-        <UploadButton setData={setData} />
+          <HStack>
+            <UploadButton setData={setData} />
+            <ColorToggle />
+          </HStack>
+        </VStack>
       </VStack>
     </Center>
   )
