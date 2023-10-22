@@ -30,6 +30,7 @@ const ProgressBar = ({
       </Text>
       <Progress
         w="100%"
+        rounded="md"
         value={(count * 100) / total}
         colorScheme={colorScheme[type]}
         height={8}
