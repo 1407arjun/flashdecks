@@ -1,12 +1,14 @@
 import {
-  Center,
   Heading,
   VStack,
   HStack,
   Spacer,
   Text,
   useToast,
-  Container
+  Container,
+  Alert,
+  useDisclosure,
+  CloseButton
 } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
@@ -17,11 +19,12 @@ import DeckType from '@/types/Deck'
 import CardType from '@/types/Card'
 import ProgressType from '@/types/Progress'
 import Status from '@/types/Status'
+import { RepeatIcon, StarIcon } from '@chakra-ui/icons'
+import Flashcard from '@/components/Flashcard'
+import Progress from '@/components/Progress'
 
 //@ts-ignore
 import { Card, Deck, createCards, statEn } from 'lt-spaced-repetition-js'
-import { RepeatIcon } from '@chakra-ui/icons'
-import Flashcard from '@/components/Flashcard'
 
 const Home: NextPage = () => {
   const toast = useToast()
@@ -34,18 +37,18 @@ const Home: NextPage = () => {
   })
   const [visible, setVisible] = useState(false)
   const [progress, setProgress] = useState<ProgressType>({
-    [Status.NEW]: 0,
     [Status.MASTERED]: 0,
     [Status.REVIEW]: 0,
-    [Status.WRONG]: 0
+    [Status.WRONG]: 0,
+    total: 0
   })
 
   useEffect(() => {
     setProgress({
-      [Status.NEW]: 0,
       [Status.MASTERED]: 0,
       [Status.REVIEW]: 0,
-      [Status.WRONG]: 0
+      [Status.WRONG]: 0,
+      total: 0
     })
     setVisible(false)
     setCard({
@@ -92,6 +95,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     if (deck) {
       setCard(
+        //@ts-ignore
         deck.pick() || {
           front: '',
           back: '',
@@ -101,9 +105,14 @@ const Home: NextPage = () => {
     }
   }, [deck])
 
+  const { isOpen: isVisible, onClose, onOpen } = useDisclosure()
+
   useEffect(() => {
+    //@ts-ignore
     if (deck && deck.dump() && deck.dump().cards) {
+      //@ts-ignore
       const cards = deck.dump().cards
+      const total = cards.length
       let mastered = 0,
         reviewing = 0,
         wrong = 0
@@ -112,7 +121,16 @@ const Home: NextPage = () => {
         else if (c.status === Status.REVIEW) reviewing++
         else if (c.status === Status.WRONG) wrong++
       })
-      // setProgress([mastered, reviewing, wrong, cards.length])
+      setProgress({
+        mastered,
+        reviewing,
+        wrong,
+        total
+      })
+
+      if (total > 0 && mastered === total) {
+        onOpen()
+      }
     }
   }, [card])
 
@@ -121,6 +139,7 @@ const Home: NextPage = () => {
     //@ts-ignore
     card.update(1)
     setCard(() => {
+      //@ts-ignore
       const next = deck.pick()
       return next
     })
@@ -131,8 +150,8 @@ const Home: NextPage = () => {
     //@ts-ignore
     card.update(0)
     setCard(() => {
+      //@ts-ignore
       const next = deck.pick()
-      // localStorage.setItem("progress", JSON.stringify(deck.dump().cards));
       return next
     })
   }
@@ -142,10 +161,10 @@ const Home: NextPage = () => {
   }
 
   return (
-    <VStack p={8} spacing={8} w={data.length === 0 ? 'inherit' : '100%'}>
+    <VStack p={4} spacing={8} w={data.length === 0 ? 'inherit' : '100%'}>
       <Head />
       <HStack justifyContent="center" alignItems="center" w="100%">
-        <Heading size={data.length === 0 ? 'xl' : 'lg'}>
+        <Heading size={data.length === 0 ? 'xl' : 'md'}>
           Custom Spaced Repetition
         </Heading>
         <Spacer />
@@ -158,6 +177,18 @@ const Home: NextPage = () => {
           <Text textAlign="end" mb={4}>
             <RepeatIcon /> Cards you don&apos;t know will reappear later
           </Text>
+          {progress.mastered === progress.total && (
+            <Alert status="success" variant="solid" rounded="md" mb={4}>
+              <HStack w="100%">
+                <Text>
+                  <StarIcon /> &nbsp; You have mastered all the cards in this
+                  deck!
+                </Text>
+                {/* <Spacer />
+                <CloseButton onClick={onClose} /> */}
+              </HStack>
+            </Alert>
+          )}
           <Flashcard
             card={card}
             handleRight={handleRight}
@@ -165,6 +196,8 @@ const Home: NextPage = () => {
             visible={visible}
             handleVisible={handleVisible}
           />
+
+          <Progress progress={progress} />
         </Container>
       )}
     </VStack>
