@@ -37,7 +37,7 @@ const formatContent = (content: string, type: 'csv' | 'json') => {
       }
       return formattedContent
     default:
-      throw 'Invalid file type'
+      throw new Error('Invalid file type', { cause: 'format' })
   }
 }
 

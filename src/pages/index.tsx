@@ -6,7 +6,8 @@ import {
   Text,
   useToast,
   Container,
-  Alert
+  Alert,
+  Center
 } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
@@ -55,24 +56,24 @@ const Home: NextPage = () => {
       status: ''
     })
 
-    setDeck(
-      new Deck({
-        id: 1,
-        cards: createCards(
-          data.map(({ front, back }) => {
-            return {
-              front,
-              back,
-              reviewCount: 0,
-              status: statEn.NEW,
-              bucket: 0
-            }
-          })
-        )
-      })
-    )
+    if (data.length > 0) {
+      setDeck(
+        new Deck({
+          id: 1,
+          cards: createCards(
+            data.map(({ front, back }) => {
+              return {
+                front,
+                back,
+                reviewCount: 0,
+                status: statEn.NEW,
+                bucket: 0
+              }
+            })
+          )
+        })
+      )
 
-    if (data.length > 0)
       toast({
         title: 'Success',
         description: "We've imported your deck successfully",
@@ -80,14 +81,7 @@ const Home: NextPage = () => {
         duration: 5000,
         isClosable: true
       })
-    else
-      toast({
-        title: 'No data found',
-        description: 'We were unable to import your deck',
-        status: 'error',
-        duration: 5000,
-        isClosable: true
-      })
+    }
   }, [data])
 
   useEffect(() => {
@@ -152,47 +146,59 @@ const Home: NextPage = () => {
     setVisible(true)
   }
 
-  return (
-    <VStack p={4} spacing={8} w={data.length === 0 ? 'inherit' : '100%'}>
-      <Head />
-      <HStack justifyContent="center" alignItems="center" w="100%">
-        <Heading size={data.length === 0 ? 'xl' : 'md'}>
-          Custom Spaced Repetition
-        </Heading>
-        <Spacer />
-        {data.length !== 0 && <UploadButton setData={setData} />}
-        <ColorToggle />
-      </HStack>
-      {data.length === 0 && <UploadButton setData={setData} />}
-      {deck && data.length > 0 && (
-        <Container maxW="2xl">
-          <Text textAlign="end" mb={4}>
-            <RepeatIcon /> Cards you don&apos;t know will reappear later
-          </Text>
-          {progress.mastered === progress.total && (
-            <Alert status="success" variant="solid" rounded="md" mb={4}>
-              <HStack w="100%">
-                <Text>
-                  <StarIcon /> &nbsp; You have mastered all the cards in this
-                  deck!
-                </Text>
-                {/* <Spacer />
+  if (data.length > 0)
+    return (
+      <VStack p={4} spacing={8} w="100%">
+        <Head />
+        <HStack justifyContent="center" alignItems="center" w="100%">
+          <Heading size="md">Custom Spaced Repetition</Heading>
+          <Spacer />
+          <UploadButton setData={setData} />
+          <ColorToggle />
+        </HStack>
+        {deck && (
+          <Container maxW="2xl">
+            <Text textAlign="end" mb={4}>
+              <RepeatIcon /> Cards you don&apos;t know will reappear later
+            </Text>
+            {progress.mastered === progress.total && (
+              <Alert status="success" variant="solid" rounded="md" mb={4}>
+                <HStack w="100%">
+                  <Text>
+                    <StarIcon /> &nbsp; You have mastered all the cards in this
+                    deck!
+                  </Text>
+                  {/* <Spacer />
                 <CloseButton onClick={onClose} /> */}
-              </HStack>
-            </Alert>
-          )}
-          <Flashcard
-            card={card}
-            handleRight={handleRight}
-            handleWrong={handleWrong}
-            visible={visible}
-            handleVisible={handleVisible}
-          />
+                </HStack>
+              </Alert>
+            )}
+            <Flashcard
+              card={card}
+              handleRight={handleRight}
+              handleWrong={handleWrong}
+              visible={visible}
+              handleVisible={handleVisible}
+            />
 
-          <Progress progress={progress} />
-        </Container>
-      )}
-    </VStack>
+            <Progress progress={progress} />
+          </Container>
+        )}
+      </VStack>
+    )
+
+  return (
+    <Center minH="100vh">
+      <VStack p={4} spacing={8} w="inherit">
+        <Head />
+        <HStack justifyContent="center" alignItems="center" w="100%">
+          <Heading size="xl">Custom Spaced Repetition</Heading>
+          <Spacer />
+          <ColorToggle />
+        </HStack>
+        <UploadButton setData={setData} />
+      </VStack>
+    </Center>
   )
 }
 

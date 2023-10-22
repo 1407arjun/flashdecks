@@ -24,13 +24,18 @@ const UploadButton = ({
         if (content) {
           const name = files[0].name.split('.')
           const ext = name[name.length - 1].toLowerCase()
-          setData(formatContent(content, ext))
+          const data = formatContent(content, ext)
+
+          if (data.length === 0)
+            throw new Error('No data found', { cause: 'format' })
+
+          setData(data)
         }
       } catch (e) {
         setData([])
         if (e instanceof Error)
           toast({
-            title: e.message || 'Invalid formatting',
+            title: e.cause === 'format' ? e.message : 'Invalid formatting',
             description: 'We were unable to import your deck',
             status: 'error',
             duration: 5000,
