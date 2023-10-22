@@ -1,6 +1,6 @@
 {
-  "name": "custom-spaced-repetition",
-  "version": "0.1.0",
+  "name": "flashdecks",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
