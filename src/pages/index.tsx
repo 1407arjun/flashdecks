@@ -152,12 +152,12 @@ const Home: NextPage = () => {
       <VStack p={4} spacing={8} w="100%">
         <Head />
         <Stack
-          direction={{ base: 'column', md: 'row' }}
+          direction={{ base: 'column', sm: 'row' }}
           justifyContent="center"
           alignItems="center"
           w="100%">
-          <Heading textAlign={{ base: 'center', md: 'left' }} size="md">
-            Custom Spaced Repetition
+          <Heading textAlign={{ base: 'center', sm: 'left' }} size="md">
+            FlashDecks
           </Heading>
           <Spacer />
           <HStack>
@@ -201,14 +201,14 @@ const Home: NextPage = () => {
       <VStack p={4} spacing={8} w="inherit">
         <Head />
         <VStack justifyContent="center" alignItems="center" w="100%">
-          <Heading textAlign="center" size="xl">
-            Custom Spaced Repetition
-          </Heading>
-          <Spacer />
           <HStack>
-            <UploadButton setData={setData} />
+            <Heading textAlign="center" size="xl">
+              FlashDecks
+            </Heading>
             <ColorToggle />
           </HStack>
+          <Spacer />
+          <UploadButton setData={setData} />
         </VStack>
       </VStack>
     </Center>

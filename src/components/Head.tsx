@@ -1,12 +1,11 @@
 import Head from 'next/head'
 
 const PageHead = () => {
-  const title = 'Page Title'
-  const desc = 'Page Desc'
-  const endpoint = 'https://example.com'
-  const domain = 'example.com'
-  const siteName = 'Page Name'
-  const twitterHandle = ''
+  const title = 'FlashDecks'
+  const desc = 'Learn by spaced repetiton on your own decks.'
+  const endpoint = 'https://flashdecks.arjuns.co'
+  const domain = 'arjuns.co'
+  const siteName = 'FlashDecks'
 
   return (
     <Head>
@@ -15,7 +14,7 @@ const PageHead = () => {
 
       <title>{title}</title>
       <meta name="description" content={desc} />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.png" />
 
       <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />
@@ -25,7 +24,6 @@ const PageHead = () => {
       <meta property="og:site_name" content={siteName} />
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content={twitterHandle} />
       <meta property="twitter:domain" content={domain} />
       <meta property="twitter:url" content={endpoint} />
       <meta name="twitter:title" content={title} />
