@@ -6,9 +6,7 @@ import {
   Text,
   useToast,
   Container,
-  Alert,
-  useDisclosure,
-  CloseButton
+  Alert
 } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
@@ -105,8 +103,6 @@ const Home: NextPage = () => {
     }
   }, [deck])
 
-  const { isOpen: isVisible, onClose, onOpen } = useDisclosure()
-
   useEffect(() => {
     //@ts-ignore
     if (deck && deck.dump() && deck.dump().cards) {
@@ -127,10 +123,6 @@ const Home: NextPage = () => {
         wrong,
         total
       })
-
-      if (total > 0 && mastered === total) {
-        onOpen()
-      }
     }
   }, [card])
 
