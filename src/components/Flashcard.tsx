@@ -36,9 +36,24 @@ const Flashcard = ({
             {card.status.toUpperCase()}
           </Button>
         </Box>
-        <Heading size={card.front.length > 20 ? 'md' : 'lg'}>
-          {card.front}
-        </Heading>
+        {!visible &&
+          (card.front.length > 20
+            ? card.front.split('\n').map((c) => (
+                <Text key={c} fontSize="lg" fontWeight="semibold">
+                  {c.trim()}
+                </Text>
+              ))
+            : card.front.split('\n').map((c) => (
+                <Heading key={c} size="lg">
+                  {c.trim()}
+                </Heading>
+              )))}
+        {visible &&
+          card.back.split('\n').map((c) => (
+            <Heading key={c} size={card.back.length > 20 ? 'md' : 'lg'}>
+              {card.back}
+            </Heading>
+          ))}
       </VStack>
       {!visible && (
         <Button
