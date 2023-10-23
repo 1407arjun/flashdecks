@@ -1,6 +1,6 @@
 import CardType from '@/types/Card'
 import Status from '@/types/Status'
-import { QuestionIcon } from '@chakra-ui/icons'
+import { ArrowForwardIcon, QuestionIcon } from '@chakra-ui/icons'
 import {
   Box,
   VStack,
@@ -124,7 +124,7 @@ const Flashcard = ({
           w="full"
           colorScheme="gray"
           onClick={handleVisible}>
-          Flip card
+          Flip card <ArrowForwardIcon />
         </Button>
       )}
       {visible && (
