@@ -20,7 +20,7 @@ import DeckType from '@/types/Deck'
 import CardType from '@/types/Card'
 import ProgressType from '@/types/Progress'
 import Status from '@/types/Status'
-import { CloseIcon, RepeatIcon, StarIcon } from '@chakra-ui/icons'
+import { RepeatIcon, StarIcon } from '@chakra-ui/icons'
 import Flashcard from '@/components/Flashcard'
 import Progress from '@/components/Progress'
 
@@ -46,7 +46,7 @@ const Home: NextPage = () => {
   })
 
   useEffect(() => {
-    const cards = JSON.parse(localStorage.getItem('deck') || '')
+    const cards = JSON.parse(localStorage.getItem('deck') || '[]')
     if (cards && cards.length > 0) {
       setDeck(
         new Deck({
