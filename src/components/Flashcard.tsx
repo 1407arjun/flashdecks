@@ -37,14 +37,16 @@ const Flashcard = ({
           </Button>
         </Box>
         {!visible &&
-          (card.front.length > 20
+          (card.front.length > 30
             ? card.front.split('\n').map((c) => (
                 <Text
                   key={c}
                   fontSize="lg"
                   fontWeight="semibold"
                   w="100%"
-                  textAlign="left">
+                  textAlign={
+                    card.front.split('\n').length > 1 ? 'left' : 'center'
+                  }>
                   {c.trim()}
                 </Text>
               ))
@@ -54,14 +56,16 @@ const Flashcard = ({
                 </Heading>
               )))}
         {visible &&
-          (card.back.length > 20
+          (card.back.length > 50
             ? card.back.split('\n').map((c) => (
                 <Text
                   key={c}
                   fontSize="lg"
                   fontWeight="semibold"
                   w="100%"
-                  textAlign="left">
+                  textAlign={
+                    card.back.split('\n').length > 1 ? 'left' : 'center'
+                  }>
                   {c.trim()}
                 </Text>
               ))
