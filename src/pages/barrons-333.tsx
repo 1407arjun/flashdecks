@@ -31,6 +31,7 @@ import barrons from '@/data/barrons-330.json'
 const Home: NextPage = () => {
   const toast = useToast()
   const [deck, setDeck] = useState(null)
+  const [showFront, setShowFront] = useState(false)
   const [data, setData] = useState<DeckType[]>(barrons)
   const [card, setCard] = useState<CardType>({
     front: '',
@@ -190,6 +191,8 @@ const Home: NextPage = () => {
               handleWrong={handleWrong}
               visible={visible}
               handleVisible={handleVisible}
+              showFront={showFront}
+              setShowFront={setShowFront}
             />
 
             <Progress progress={progress} />
