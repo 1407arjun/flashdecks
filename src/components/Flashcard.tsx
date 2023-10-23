@@ -39,21 +39,37 @@ const Flashcard = ({
         {!visible &&
           (card.front.length > 20
             ? card.front.split('\n').map((c) => (
-                <Text key={c} fontSize="lg" fontWeight="semibold">
+                <Text
+                  key={c}
+                  fontSize="lg"
+                  fontWeight="semibold"
+                  w="100%"
+                  textAlign="left">
                   {c.trim()}
                 </Text>
               ))
             : card.front.split('\n').map((c) => (
-                <Heading key={c} size="lg">
+                <Heading key={c} size="lg" textAlign="center">
                   {c.trim()}
                 </Heading>
               )))}
         {visible &&
-          card.back.split('\n').map((c) => (
-            <Heading key={c} size={card.back.length > 20 ? 'md' : 'lg'}>
-              {card.back}
-            </Heading>
-          ))}
+          (card.back.length > 20
+            ? card.back.split('\n').map((c) => (
+                <Text
+                  key={c}
+                  fontSize="lg"
+                  fontWeight="semibold"
+                  w="100%"
+                  textAlign="left">
+                  {c.trim()}
+                </Text>
+              ))
+            : card.back.split('\n').map((c) => (
+                <Heading key={c} size="lg" textAlign="center">
+                  {c.trim()}
+                </Heading>
+              )))}
       </VStack>
       {!visible && (
         <Button
