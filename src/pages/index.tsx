@@ -294,6 +294,10 @@ const Home: NextPage = () => {
           <Spacer />
           <UploadButton setData={setData} />
         </VStack>
+        <Text fontSize="lg" fontWeight="medium" w="100%" textAlign="center">
+          [&#123; &ldquo;front&rdquo;: &ldquo;Hello&rdquo;, &ldquo;back&rdquo;:
+          &ldquo;World&rdquo; &#125;]
+        </Text>
       </VStack>
     </Center>
   )
