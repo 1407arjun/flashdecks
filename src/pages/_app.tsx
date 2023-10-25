@@ -6,6 +6,8 @@ import heading from '@/assets/fonts/heading'
 import body from '@/assets/fonts/body'
 import theme from '@/theme/theme'
 
+import { Analytics } from '@vercel/analytics/react'
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -19,6 +21,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </style>
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />
+        <Analytics />
       </ChakraProvider>
     </>
   )
