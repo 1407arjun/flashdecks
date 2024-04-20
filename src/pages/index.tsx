@@ -14,6 +14,7 @@ import {
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
 import ColorToggle from '../components/ColorToggle'
+import GitHubCTA from '../components/GitHubCTA'
 import Head from '../components/Head'
 import UploadButton from '../components/UploadButton'
 import DeckType from '@/types/Deck'
@@ -245,6 +246,7 @@ const Home: NextPage = () => {
               }}>
               Clear deck
             </Button>
+            <GitHubCTA />
             <ColorToggle />
           </HStack>
         </Stack>
