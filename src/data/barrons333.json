@@ -1,0 +1,532 @@
+[
+  { "front": "abate", "back": "subside or moderate" },
+  { "front": "aberrant", "back": "abnormal or deviant" },
+  { "front": "abeyance", "back": "suspended action" },
+  { "front": "abscond", "back": "depart secretly and hide" },
+  {
+    "front": "abstemious",
+    "back": "sparing in eating and drinking; temperate"
+  },
+  { "front": "admonish", "back": "warn; reprove" },
+  {
+    "front": "adulterate",
+    "back": "make impure by adding inferior or tainted substances"
+  },
+  {
+    "front": "aesthetic",
+    "back": "artistic; dealing with or capable of appreciating the beautiful"
+  },
+  { "front": "aggregate", "back": "gather; accumulate" },
+  { "front": "alacrity", "back": "cheerful promptness; eagerness" },
+  { "front": "alleviate", "back": "relieve" },
+  { "front": "amalgamate", "back": "combine; unite in one body" },
+  { "front": "ambiguous", "back": "unclear or doubtful in meaning" },
+  {
+    "front": "ambivalence",
+    "back": "the state of having contradictory or conflicting emotional attitudes"
+  },
+  { "front": "ameliorate", "back": "improve" },
+  { "front": "anachronism", "back": "something or someone misplaced in time" },
+  { "front": "analogous", "back": "comparable" },
+  {
+    "front": "anarchy",
+    "back": "absence of governing body; state of disorder"
+  },
+  { "front": "anomalous", "back": "abnormal; irregular" },
+  { "front": "antipathy", "back": "aversion; dislike" },
+  { "front": "apathy", "back": "lack of caring; indifference" },
+  { "front": "appease", "back": "pacify or soothe; relieve" },
+  { "front": "apprise", "back": "inform" },
+  { "front": "approbation", "back": "approval" },
+  {
+    "front": "appropriate",
+    "back": "acquire; take possession of for one's own use"
+  },
+  { "front": "arduous", "back": "hard; strenuous" },
+  { "front": "artless", "back": "without guile; open and honest" },
+  { "front": "ascetic", "back": "practicing self-denial; austere" },
+  { "front": "assiduous", "back": "diligent" },
+  {
+    "front": "assuage",
+    "back": "ease or lessen (pain); satisfy (hunger); soothe (anger)"
+  },
+  {
+    "front": "attenuate",
+    "back": "make thinner; weaken or lessen (in density, force, degree)"
+  },
+  { "front": "audacious", "back": "daring; bold" },
+  {
+    "front": "austere",
+    "back": "forbiddingly stern; severely simple and unornamented"
+  },
+  {
+    "front": "aver",
+    "back": "assert confidently or declare; as used in law, state formally as a fact"
+  },
+  {
+    "front": "banal",
+    "back": "hackneyed; commonplace; trite; lacking originality"
+  },
+  { "front": "belie", "back": "contradict; give a false impression" },
+  { "front": "beneficent", "back": "kindly; doing good" },
+  { "front": "bolster", "back": "support; reinforce" },
+  { "front": "bombastic", "back": "pompous; using inflated language" },
+  { "front": "boorish", "back": "rude; insensitive" },
+  { "front": "burgeon", "back": "grow forth; send out buds" },
+  { "front": "burnish", "back": "make shiny by rubbing; polish" },
+  { "front": "buttress", "back": "support; prop up" },
+  { "front": "cacophonous", "back": "discordant; inharmonious" },
+  { "front": "capricious", "back": "unpredictable; fickle" },
+  { "front": "castigation", "back": "punishment; severe criticism" },
+  {
+    "front": "catalyst",
+    "back": "agent that stimulates or precipitates a reaction, development, or change"
+  },
+  { "front": "caustic", "back": "burning; sarcastically biting" },
+  { "front": "chicanery", "back": "trickery; deception" },
+  { "front": "coagulate", "back": "thicken; congeal; clot" },
+  {
+    "front": "coda",
+    "back": "concluding section of a musical or literary composition; something that summarizes"
+  },
+  { "front": "cogent", "back": "convincing" },
+  {
+    "front": "commensurate",
+    "back": "corresponding in extent, degree, amount, etc.; proportionate"
+  },
+  { "front": "compendium", "back": "brief, comprehensive summary" },
+  {
+    "front": "complaisant",
+    "back": "trying to please; overly polite; obliging"
+  },
+  { "front": "compliant", "back": "yielding; conforming to requirements" },
+  { "front": "conciliatory", "back": "reconciling; soothing" },
+  {
+    "front": "condone",
+    "back": "overlook; forgive; give tacit approval; excuse"
+  },
+  { "front": "confound", "back": "confuse; puzzle" },
+  {
+    "front": "connoisseur",
+    "back": "person competent to act as a judge of art, etc.; a lover of an art"
+  },
+  { "front": "contention", "back": "claim; thesis" },
+  { "front": "contentious", "back": "quarrelsome" },
+  { "front": "contrite", "back": "penitent" },
+  { "front": "conundrum", "back": "riddle; difficult problem" },
+  { "front": "converge", "back": "approach; tend to meet; come together" },
+  { "front": "convoluted", "back": "coiled around; involved; intricate" },
+  { "front": "craven", "back": "cowardly" },
+  { "front": "daunt", "back": "intimidate; frighten" },
+  {
+    "front": "decorum",
+    "back": "propriety; orderliness and good taste in manners"
+  },
+  { "front": "default", "back": "failure to act" },
+  { "front": "deference", "back": "courteous regard for another's wish" },
+  { "front": "delineate", "back": "portray; depict; sketch" },
+  { "front": "denigrate", "back": "blacken" },
+  { "front": "deride", "back": "ridicule; make fun of" },
+  { "front": "derivative", "back": "unoriginal; obtained from another source" },
+  { "front": "desiccate", "back": "dry up" },
+  { "front": "desultory", "back": "aimless; haphazard; digressing at random" },
+  { "front": "deterrent", "back": "something that discourages; hindrance" },
+  { "front": "diatribe", "back": "bitter scolding; invective" },
+  {
+    "front": "dichotomy",
+    "back": "split; branching into two parts (especially contradictory ones)"
+  },
+  { "front": "diffidence", "back": "shyness" },
+  { "front": "diffuse", "back": "wordy; rambling; spread out (like a gas)" },
+  { "front": "digression", "back": "wandering away from the subject" },
+  { "front": "dirge", "back": "lament with music" },
+  { "front": "disabuse", "back": "correct a false impression; undeceive" },
+  {
+    "front": "discerning",
+    "back": "mentally quick and observant; having insight"
+  },
+  { "front": "discordant", "back": "not harmonious; conflicting" },
+  { "front": "discredit", "back": "defame; destroy confidence in; disbelieve" },
+  { "front": "discrepancy", "back": "lack of consistency; difference" },
+  {
+    "front": "discrete",
+    "back": "separate; unconnected; consisting of distinct parts"
+  },
+  { "front": "disingenuous", "back": "lacking genuine candor; insincere" },
+  { "front": "disinterested", "back": "unprejudiced" },
+  { "front": "disjointed", "back": "lacking coherence" },
+  { "front": "dismiss", "back": "eliminate from consideration; reject" },
+  { "front": "disparage", "back": "belittle" },
+  { "front": "disparate", "back": "basically different; unrelated" },
+  { "front": "dissemble", "back": "disguise; pretend" },
+  {
+    "front": "disseminate",
+    "back": "distribute; spread; scatter (like seeds)"
+  },
+  { "front": "dissolution", "back": "disintegration; looseness in morals" },
+  { "front": "dissonance", "back": "discord; opposite of harmony" },
+  { "front": "distend", "back": "expand; swell out" },
+  { "front": "distill", "back": "purify; refine; concentrate" },
+  {
+    "front": "diverge",
+    "back": "vary; go in different directions from the same point"
+  },
+  { "front": "divest", "back": "strip; deprive" },
+  { "front": "document", "back": "provide written evidence" },
+  { "front": "dogmatic", "back": "opinionated; arbitrary; doctrinal" },
+  { "front": "dormant", "back": "sleeping; lethargic; latent" },
+  { "front": "dupe", "back": "someone easily fooled" },
+  {
+    "front": "ebullient",
+    "back": "showing excitement; overflowing with enthusiasm"
+  },
+  {
+    "front": "eclectic",
+    "back": "selective; composed of elements drawn from disparate sources"
+  },
+  { "front": "efficacy", "back": "power to produce desired effect" },
+  {
+    "front": "effrontery",
+    "back": "impudence; shameless boldness; sheer nerve; presumptuousness"
+  },
+  { "front": "elegy", "back": "poem or song expressing lamentation" },
+  { "front": "elicit", "back": "draw out by discussion" },
+  { "front": "embellish", "back": "adorn; ornament; enhance, as a story" },
+  { "front": "empirical", "back": "base on experience" },
+  { "front": "emulate", "back": "imitate; rival" },
+  {
+    "front": "endemic",
+    "back": "prevailing among a specific group of people or an area"
+  },
+  { "front": "enervate", "back": "weaken" },
+  { "front": "engender", "back": "cause; produce" },
+  { "front": "enhance", "back": "increase; improve" },
+  { "front": "ephemeral", "back": "short-lived; fleeting" },
+  { "front": "equanimity", "back": "calmness of temperament; composure" },
+  {
+    "front": "equivocate",
+    "back": "lie, mislead; attempt to conceal the truth"
+  },
+  { "front": "erudite", "back": "learned; scholarly" },
+  {
+    "front": "esoteric",
+    "back": "hard to understand; known only to the chosen few"
+  },
+  {
+    "front": "eulogy",
+    "back": "expression of praise, often on the occasion of someone's death"
+  },
+  {
+    "front": "euphemism",
+    "back": "mild expression in place of an unpleasant one"
+  },
+  { "front": "exacerbate", "back": "worsen; embitter" },
+  { "front": "exculpate", "back": "clear from blame" },
+  {
+    "front": "exigency",
+    "back": "urgent situation; pressing needs or demands; state of requiring immediate attention"
+  },
+  { "front": "extrapolation", "back": "projection; superfluous" },
+  { "front": "facetious", "back": "joking (often inappropriately); humorous" },
+  { "front": "facilitate", "back": "help bring about; make less difficult" },
+  { "front": "fallacious", "back": "false; misleading" },
+  { "front": "fatuous", "back": "brainless; inane; foolish, yet smug" },
+  {
+    "front": "fawning",
+    "back": "trying to please by behaving obsequiously, flattering or cringing"
+  },
+  { "front": "felicitous", "back": "apt; suitably expressed; well chosen" },
+  { "front": "fervor", "back": "glowing ardor; intensity of feeling" },
+  { "front": "flag", "back": "droop; grow feeble" },
+  { "front": "fledgling", "back": "inexperienced" },
+  { "front": "flout", "back": "reject; mock; show contempt for" },
+  { "front": "foment", "back": "stir up; instigate" },
+  { "front": "forestall", "back": "prevent by taking action in advance" },
+  { "front": "frugality", "back": "thrift; economy" },
+  { "front": "futile", "back": "useless; hopeless; ineffectual" },
+  { "front": "gainsay", "back": "deny" },
+  { "front": "garrulous", "back": "loquacious; wordy; talkative" },
+  { "front": "goad", "back": "urge on" },
+  { "front": "gouge", "back": "overcharge" },
+  {
+    "front": "grandiloquent",
+    "back": "pompous; bombastic; using high-sounding language"
+  },
+  { "front": "gregarious", "back": "sociable" },
+  { "front": "guileless", "back": "without deceit" },
+  { "front": "gullible", "back": "easily deceived" },
+  { "front": "harangue", "back": "long, passionate, and vehement speech" },
+  { "front": "homogenous", "back": "of the same kind" },
+  { "front": "hyperbole", "back": "exaggeration; overstatement" },
+  { "front": "iconoclast", "back": "attacking cherished traditions" },
+  { "front": "idolatry", "back": "worship of idols; excessive admiration" },
+  { "front": "immutable", "back": "unchangeable" },
+  { "front": "impair", "back": "injure; hurt" },
+  { "front": "impassive", "back": "without feeling; imperturbable; stoical" },
+  { "front": "impede", "back": "hinder, block" },
+  {
+    "front": "impermeable",
+    "back": "impervious; not permitting passage through its substance"
+  },
+  { "front": "imperturbable", "back": "calm; placid" },
+  {
+    "front": "impervious",
+    "back": "impenetrable; incapable of being damaged or distressed"
+  },
+  { "front": "implacable", "back": "incapable of being pacified" },
+  { "front": "implicit", "back": "understood but not stated" },
+  { "front": "implode", "back": "burst inward" },
+  {
+    "front": "inadvertently",
+    "back": "unintentionally; by oversight; carelessly"
+  },
+  { "front": "inchoate", "back": "recently begun; rudimentary; elementary" },
+  { "front": "incongruity", "back": "lack of harmony; absurdity" },
+  { "front": "inconsequential", "back": "insignificant; unimportant" },
+  {
+    "front": "incorporate",
+    "back": "introduce something into a larger whole; combine; unite"
+  },
+  {
+    "front": "indeterminate",
+    "back": "uncertain; not clearly fixed; indefinite"
+  },
+  { "front": "indigence", "back": "poverty" },
+  { "front": "indolent", "back": "lazy" },
+  { "front": "inert", "back": "inactive; lacking power to move" },
+  {
+    "front": "ingenuous",
+    "back": "naive and trusting; young; unsophisticated"
+  },
+  { "front": "inherent", "back": "firmly established by nature or habit" },
+  { "front": "innocuous", "back": "harmless" },
+  { "front": "insensible", "back": "unconscious; unresponsive" },
+  { "front": "insinuate", "back": "hint; imply; creep in" },
+  { "front": "insipid", "back": "lacking in flavor; dull" },
+  { "front": "insularity", "back": "narrow-mindedness; isolation" },
+  { "front": "intractable", "back": "unruly; stubborn; unyielding" },
+  {
+    "front": "intransigence",
+    "back": "refusal of any compromise; stubbornness"
+  },
+  { "front": "inundate", "back": "overwhelm; flood; submerge" },
+  { "front": "inured", "back": "accustomed; hardened" },
+  { "front": "invective", "back": "abuse" },
+  { "front": "irascible", "back": "irritable; easily angered" },
+  { "front": "irresolute", "back": "uncertain how to act; weak" },
+  { "front": "itinerary", "back": "plan of a trip" },
+  { "front": "laconic", "back": "brief and to the point" },
+  { "front": "lassitude", "back": "languor; weariness" },
+  { "front": "latent", "back": "potential but undeveloped; dormant; hidden" },
+  { "front": "laud", "back": "praise" },
+  { "front": "lethargic", "back": "drowsy; dull" },
+  {
+    "front": "levee",
+    "back": "earthen or stone embankment to prevent flooding"
+  },
+  { "front": "levity", "back": "lack of seriousness or steadiness; frivolity" },
+  {
+    "front": "log",
+    "back": "record of a voyage or flight; record of day-to-day activities"
+  },
+  { "front": "loquacious", "back": "talkative" },
+  { "front": "lucid", "back": "easily understood; clear; intelligible" },
+  { "front": "luminous", "back": "shining; issuing light" },
+  { "front": "magnanimity", "back": "generosity" },
+  { "front": "malingerer", "back": "one who feigns illness to escape duty" },
+  {
+    "front": "malleable",
+    "back": "capable of being shaped by pounding; impressionable"
+  },
+  { "front": "maverick", "back": "rebel; nonconformist" },
+  { "front": "mendacious", "back": "lying; habitually dishonest" },
+  { "front": "metamorphosis", "back": "change of form" },
+  {
+    "front": "meticulous",
+    "back": "excessively careful; painstaking; scrupulous"
+  },
+  { "front": "misanthrope", "back": "one who hates mankind" },
+  { "front": "mitigate", "back": "lessen in intensity; moderate; appease" },
+  { "front": "mollify", "back": "soothe" },
+  { "front": "morose", "back": "ill-humored; sullen; melancholy" },
+  { "front": "mundane", "back": "worldly as opposed to spiritual; everyday" },
+  { "front": "negate", "back": "cancel out; nullify; deny" },
+  { "front": "neophyte", "back": "recent convert; beginner" },
+  { "front": "obdurate", "back": "stubborn" },
+  {
+    "front": "obsequious",
+    "back": "slavishly attentive; servile; sycophantic"
+  },
+  { "front": "obviate", "back": "make unnecessary; get rid of" },
+  { "front": "occlude", "back": "shut; close" },
+  {
+    "front": "officious",
+    "back": "meddlesome; excessively pushy in offering one's services"
+  },
+  { "front": "onerous", "back": "burdensome" },
+  { "front": "opprobium", "back": "infamy; vilification" },
+  { "front": "oscillate", "back": "vibrate pendulumlike; waver" },
+  {
+    "front": "ostentatious",
+    "back": "showy; pretentious; trying to attract attention"
+  },
+  { "front": "paragon", "back": "model of perfection" },
+  {
+    "front": "partisan",
+    "back": "one-sided; prejudiced; committed to a party"
+  },
+  { "front": "pathological", "back": "pertaining to disease" },
+  { "front": "paucity", "back": "scarcity" },
+  { "front": "pedantic", "back": "showing off learning; bookish" },
+  { "front": "penchant", "back": "strong inclination; liking" },
+  { "front": "penury", "back": "severe poverty; stinginess" },
+  { "front": "perennial", "back": "something long-lasting" },
+  { "front": "perfidious", "back": "treacherous; disloyal" },
+  {
+    "front": "perfunctory",
+    "back": "superficial; not thorough; lacking interest, care, or enthusiasm"
+  },
+  {
+    "front": "permeable",
+    "back": "penetrable; porous; allowing liquids or gas to pass through"
+  },
+  { "front": "pervasive", "back": "spread throughout" },
+  { "front": "phlegmatic", "back": "calm; not easily disturbed" },
+  { "front": "piety", "back": "devoutness; reverence for God" },
+  { "front": "placate", "back": "pacify; conciliate" },
+  { "front": "plasticity", "back": "ability to be molded" },
+  { "front": "platitude", "back": "trite remark; commonplace statement" },
+  { "front": "plethora", "back": "excess; overabundance" },
+  { "front": "plummet", "back": "fall sharply" },
+  { "front": "porous", "back": "full of pores; like a sieve" },
+  { "front": "pragmatic", "back": "practical (as opposed to idealistic)" },
+  { "front": "preamble", "back": "introductory statement" },
+  { "front": "precarious", "back": "uncertain; risky" },
+  { "front": "precipitate", "back": "rash; premature; hasty; sudden" },
+  { "front": "precursor", "back": "forerunner; harbinger" },
+  { "front": "presumptuous", "back": "arrogant; taking liberties" },
+  { "front": "prevaricate", "back": "lie" },
+  {
+    "front": "pristine",
+    "back": "characteristic of earlier times; primitive; unspoiled"
+  },
+  { "front": "probity", "back": "uprightness; incorruptibility" },
+  {
+    "front": "problematic",
+    "back": "doubtful; unsettled; questionable; perplexing"
+  },
+  { "front": "prodigal", "back": "wasteful; reckless with money" },
+  { "front": "profound", "back": "deep; not superficial; complete" },
+  { "front": "prohibitive", "back": "inclined to prevent or forbid" },
+  { "front": "proliferate", "back": "grow rapidly; spread; multiply" },
+  { "front": "propensity", "back": "natural inclination" },
+  { "front": "propitiate", "back": "appease" },
+  { "front": "propriety", "back": "fitness; correct conduct" },
+  { "front": "proscribe", "back": "ostracize; banish; outlaw" },
+  { "front": "pungent", "back": "stinging; sharp in taste or smell; caustic" },
+  { "front": "qualified", "back": "limited; restricted" },
+  { "front": "quibble", "back": "minor objection or complaint" },
+  { "front": "quiescent", "back": "at rest; dormant; temporarily inactive" },
+  { "front": "rarefied", "back": "made less dense (of a gas)" },
+  {
+    "front": "recalcitrant",
+    "back": "obstinately stubborn; determined to resist authority; unruly"
+  },
+  {
+    "front": "recant",
+    "back": "disclaim or disavow; retract a previous statement; openly confess error"
+  },
+  { "front": "recluse", "back": "hermit; loner" },
+  { "front": "recondite", "back": "abstruse; profound; secret" },
+  { "front": "refractory", "back": "stubborn; unmanageable" },
+  { "front": "refute", "back": "disprove" },
+  {
+    "front": "relegate",
+    "back": "banish to an inferior position; delegate; assign"
+  },
+  { "front": "reproach", "back": "express disapproval or disappointment" },
+  {
+    "front": "reprobate",
+    "back": "person hardened by sin, devoid of a sense of decency"
+  },
+  { "front": "repudiate", "back": "disown; disavow" },
+  { "front": "rescind", "back": "cancel" },
+  { "front": "resolution", "back": "determination" },
+  { "front": "resolve", "back": "determination; firmness of purpose" },
+  {
+    "front": "reticent",
+    "back": "reserved; uncommunicative; inclined to silence"
+  },
+  { "front": "reverent", "back": "respectful; worshipful" },
+  { "front": "sage", "back": "person celebrated for wisdom" },
+  { "front": "salubrious", "back": "healthful" },
+  { "front": "sanction", "back": "approve; ratify" },
+  { "front": "satiate", "back": "satisfy fully" },
+  { "front": "saturate", "back": "soak thoroughly" },
+  {
+    "front": "savor",
+    "back": "enjoy; have a distinctive flavor, smell, or quality"
+  },
+  {
+    "front": "secrete",
+    "back": "hide away or cache; produce and release a substance into an organism"
+  },
+  { "front": "shard", "back": "fragment; generally of pottery" },
+  {
+    "front": "skeptic",
+    "back": "doubter; person who suspends judgment until having examined the evidence supporting a point of view"
+  },
+  { "front": "solicious", "back": "worried, concerned" },
+  { "front": "soporific", "back": "sleep-causing; marked by sleepiness" },
+  {
+    "front": "specious",
+    "back": "seemingly reasonable but incorrect; misleading (often intentional)"
+  },
+  {
+    "front": "spectrum",
+    "back": "colored band produced when a beam of light passes through a prism"
+  },
+  { "front": "sporadic", "back": "occurring irregularly" },
+  { "front": "stigma", "back": "token of disgrace; brand" },
+  { "front": "stint", "back": "be thrifty; set limits" },
+  { "front": "stipulate", "back": "make express conditions, specify" },
+  { "front": "stolid", "back": "dull; impassive" },
+  { "front": "striated", "back": "marked with parallel bands; grooved" },
+  { "front": "strut", "back": "supporting bar" },
+  { "front": "subpoena", "back": "writ summoning a witness to appear" },
+  { "front": "subside", "back": "settle down; descend; grow quiet" },
+  { "front": "substantiate", "back": "establish by evidence; verify; support" },
+  {
+    "front": "supersede",
+    "back": "cause to be set aside; replace; make obsolete"
+  },
+  { "front": "supposition", "back": "hypothesis; surmise" },
+  { "front": "tacit", "back": "understood; not put into words" },
+  {
+    "front": "tangential",
+    "back": "peripheral; only slightly connected; digressing"
+  },
+  { "front": "tenuous", "back": "thin; rare; slim" },
+  { "front": "tirade", "back": "extended scolding; denunciation; harangue" },
+  { "front": "torpor", "back": "lethargy; sluggishness; dormancy" },
+  { "front": "tortuous", "back": "winding; full of curves" },
+  { "front": "tractable", "back": "docile; easily managed" },
+  { "front": "transgression", "back": "violation of a law; sin" },
+  { "front": "truculence", "back": "aggressiveness; ferocity" },
+  { "front": "vacillate", "back": "waver; fluctuate" },
+  { "front": "venerate", "back": "revere" },
+  { "front": "veracious", "back": "truthful" },
+  { "front": "verbose", "back": "wordy" },
+  {
+    "front": "viable",
+    "back": "practical or workable; capable of maintaining life"
+  },
+  { "front": "viscous", "back": "sticky, gluey" },
+  { "front": "vituperative", "back": "abusive; scolding" },
+  { "front": "volatile", "back": "changeable; explosive; evaporating rapidly" },
+  { "front": "warranted", "back": "justified; authorized" },
+  { "front": "wary", "back": "very cautious" },
+  { "front": "welter", "back": "turmoil; bewildering jumble" },
+  { "front": "whimsical", "back": "capricious; fanciful" },
+  { "front": "zealot", "back": "fanatic; person who shows excessive zeal" }
+]
