@@ -1,8 +1,8 @@
 import Deck from '@/types/Deck'
 import formatContent from '@/utils/formatContent'
 import { AttachmentIcon } from '@chakra-ui/icons'
-import { Box, Button, useToast } from '@chakra-ui/react'
-import { useRef } from 'react'
+import { Spinner, Button, Text, useToast, VStack } from '@chakra-ui/react'
+import { useRef, useState } from 'react'
 
 const UploadButton = ({
   setData
@@ -11,58 +11,98 @@ const UploadButton = ({
 }) => {
   let fileRef = useRef<HTMLInputElement>()
   const toast = useToast()
+  const [isLoading, setIsLoading] = useState(false)
 
   const readFile = (event: React.FormEvent<HTMLInputElement>) => {
+    setIsLoading(true)
     const fileReader = new FileReader()
-    //@ts-ignore
-    const { files } = event.target
+    const { files } = event.target as HTMLInputElement
 
-    fileReader.readAsText(files[0], 'UTF-8')
-    fileReader.onload = (e) => {
-      try {
-        const content = e.target!.result?.toString().replace(/\r\n/g, '\n')
-        if (content) {
-          const name = files[0].name.split('.')
-          const ext = name[name.length - 1].toLowerCase()
-          const data = formatContent(content, ext)
+    if (!files || !files.length) return
 
-          if (data.length === 0)
-            throw new Error('No data found', { cause: 'format' })
+    const name = files[0].name.split('.')
+    const ext = name[name.length - 1].toLowerCase()
 
-          setData(data)
-        }
-      } catch (e) {
-        setData([])
-        if (e instanceof Error)
-          toast({
-            title: e.cause === 'format' ? e.message : 'Invalid formatting',
-            description: 'We were unable to import your deck',
-            status: 'error',
-            duration: 5000,
-            isClosable: true
-          })
+    const isReadRaw = ext === 'json' || ext === 'csv'
+
+    try {
+      if (!(files && Array.isArray(Array.from(files)) && files.length)) {
+        setIsLoading(false)
+        return
       }
+
+      if (isReadRaw) {
+        fileReader.readAsText(files[0], 'UTF-8')
+      } else {
+        fileReader.readAsArrayBuffer(files[0])
+      }
+
+      fileReader.onload = async (e) => {
+        try {
+          const content = e.target!.result
+          if (content) {
+            const data = await formatContent(
+              isReadRaw
+                ? content.toString().replace(/\r\n/g, '\n')
+                : new Uint8Array(content as ArrayBuffer),
+              ext
+            )
+
+            if (data.length === 0)
+              throw new Error('No data found', { cause: 'custom' })
+
+            setData(data)
+          }
+        } catch (e) {
+          setData([])
+          if (e instanceof Error)
+            toast({
+              title: e.cause === 'custom' ? e.message : 'Invalid formatting',
+              description: 'We were unable to import your deck',
+              status: 'error',
+              duration: 5000,
+              isClosable: true
+            })
+        } finally {
+          setIsLoading(false)
+        }
+      }
+    } catch (e) {
+      setIsLoading(false)
     }
   }
 
   return (
-    <Box alignSelf="center">
+    <VStack alignSelf="center" gap={4}>
       <input
         //@ts-ignore
         ref={fileRef}
         type="file"
-        accept=".csv,.json"
+        accept=".csv,.json,.png,.jpeg,.jpg" // Will add PDF support later
         onChange={readFile}
         style={{ display: 'none' }}></input>
-      <Button
-        type="submit"
-        onClick={() => {
-          fileRef.current!.click()
-        }}
-        leftIcon={<AttachmentIcon />}>
-        Upload CSV or JSON file
-      </Button>
-    </Box>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <Button
+            type="submit"
+            onClick={() => {
+              fileRef.current!.click()
+            }}
+            leftIcon={<AttachmentIcon />}>
+            Upload a file
+          </Button>
+          <Text
+            fontSize="xs"
+            textAlign={{ base: 'center', sm: 'right' }}
+            color="gray">
+            Upload any <b>image file</b> containing questions and answers or
+            upload the legacy <b>CSV or JSON</b> formats
+          </Text>
+        </>
+      )}
+    </VStack>
   )
 }
 
